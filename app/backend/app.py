@@ -158,7 +158,7 @@ async def format_as_ndjson(r: AsyncGenerator[dict, None]) -> AsyncGenerator[str,
 @authenticated
 async def chat(auth_claims: Dict[str, Any]):
     if not request.is_json:
-        return jsonify({"error": "request must be json"}), 415
+        return jsonify({"error": "request must be json !"}), 415
     request_json = await request.get_json()
     context = request_json.get("context", {})
     context["auth_claims"] = auth_claims
